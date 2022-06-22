@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# AWS MediaConvert를 이용한 비디오 스트리밍 시스템 개발
 
-You can use the [editor on GitHub](https://github.com/ryujt/video-streamming/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 서버 구성
 
-### Markdown
+사용자의 촬영 영상을 자르거나 위에 글씨 또는 그림 그릴 수 있어야 하고, 애니메이션 스티커를 추가하는 등의 요구사항 때문에
+EC2와 FFMPEG을 이용해서 인코딩 서버를 구성하고 있었으나 개발 시간을 단축하기 위해서 AWS MediaConvert를 사용하게 되었습니다.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+MediaConvert에서는 손글씨 등을 영상위에 겹쳐서 처리할 수가 없어서 영상 자르기 및 HLS 인코딩 기능만 사용하고,
+영상 위에 그려져야 할 정보가 담긴 파일을 함께 저장해서
+사용자 앱의 영상 플레이어가 이를 해석하고 정해진 위치와 시간에 맞춰
+영상 위에 표시되는 형식을 취하고 있습니다.
 
-```markdown
-Syntax highlighted code block
+![](./pic-1.png)
 
-# Header 1
-## Header 2
-### Header 3
+### 영상 편집 스크린 샷
+![](./pic-2.png)
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## 동작 설명
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ryujt/video-streamming/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
